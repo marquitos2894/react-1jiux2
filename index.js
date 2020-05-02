@@ -1,38 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
 
-//let nombre = "marcos"
-
-/*function A(props){
- return <p>Hola {props.nombre}</p>
-}
-
-function B(props){
- return <p>{props.nombre} :10</p>
-}*/
-class Contador extends Component{
-  constructor(){
-    super();
-    this.state = {
-      contador:0
-    };
-  }
-
-  aumentar = ()=>{this.setState({
-    contador:this.state.contador+1
-    }) 
-  };
-  
-  render(){
-    return (<div>
-    <p>{this.state.contador}</p> 
-    <button onClick={ this.aumentar } >Contar</button>
-    </div>);
-  }
-}
-
+import Contador from './Contador';
 
 class App extends Component {
   constructor() {
@@ -47,7 +18,7 @@ class App extends Component {
     return (
       <div>
         <Hello name={this.state.name} />
-        <Contador />
+        <Contador/>
       </div>
     );
   }
